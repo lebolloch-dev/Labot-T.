@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 8px;
+  background-color: rgba($color: #000000, $alpha: 0.15);
+  justify-content: space-between;
+  z-index: 100;
+
+  img {
+    width: 75px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      padding-right: 16px;
+      li {
+        padding: 8px;
+
+        .header-activ {
+          color: white;
+          text-shadow: 0px 0px 20px rgba($color: #000000, $alpha: 0.3);
+        }
+      }
+    }
+    a {
+      padding: 4px;
+      font: size 11px;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 1.5px;
+      &:hover {
+        color: white;
+        text-shadow: 0px 0px 20px rgba($color: #000000, $alpha: 0.3);
+      }
+      .fab {
+        font-size: 1.5em;
+      }
+
+      .fa-facebook-square:hover {
+        color: #3b5998;
+      }
+      .fa-instagram:hover {
+        // background: linear-gradient(0.48turn, #833ab4, #fcaf45);
+        background: linear-gradient(
+          0.55turn,
+          #515bd4,
+          #8134af,
+          #dd2a7b,
+          #feda77,
+          #f58529
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .fa-youtube:hover {
+        color: #c4302b;
+      }
+      .fa-spotify:hover {
+        color: #1ed761;
+      }
+      .fa-soundcloud:hover {
+        background: linear-gradient(0.48turn, #ff8800, #ff3300);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .fa-bandcamp:hover {
+        color: #629aa9;
+      }
+    }
+  }
+}

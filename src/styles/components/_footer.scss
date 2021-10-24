@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: rgba($color: #000000, $alpha: 0.15);
+  margin-top: 64px;
+  font-size: 0.8em;
+  letter-spacing: 0.3px;
+  .copyright {
+    display: flex;
+    align-items: center;
+    i {
+      margin: 0 3px;
+    }
+  }
+  .dev {
+    margin-top: 8px;
+    display: flex;
+    a {
+      margin-left: 3px;
+    }
+  }
+}

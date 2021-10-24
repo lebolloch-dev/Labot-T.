@@ -1,0 +1,55 @@
+.wall-music {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .card-container {
+    width: 282px;
+    margin-bottom: 18px;
+    margin-right: 18px;
+    box-shadow: 0 4px 10px 0 rgba($color: black, $alpha: 0.5);
+
+    .cover-click {
+      width: 100%;
+
+      img {
+        width: 100%;
+        padding: 8px;
+      }
+    }
+
+    .lecteur-spotify {
+      padding: 0 8px;
+    }
+
+    .footer-card {
+      display: flex;
+      justify-content: space-between;
+
+      padding: 8px;
+      position: relative;
+
+      .info-music {
+        h3 {
+          white-space: nowrap;
+          letter-spacing: 1.5px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+
+      .boutton-stream {
+        bottom: 4px;
+        right: 8px;
+        position: absolute;
+        width: 60px;
+        img {
+          width: 60px;
+        }
+      }
+    }
+  }
+}

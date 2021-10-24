@@ -1,0 +1,52 @@
+.nav-case {
+  display: flex;
+
+  a {
+    position: relative;
+    width: 25%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 100%;
+      opacity: 0.4;
+      transition: 0.5s;
+    }
+    &:hover::after {
+      top: 0;
+    }
+    h3 {
+      font-size: 28px;
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    }
+  }
+
+  .nav-music {
+    background-image: url(../../image/nav-case/MUSIC.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .nav-artist {
+    background-image: url(../../image/nav-case/ARTISTS.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .nav-event {
+    background-image: url(../../image/nav-case/EVENTS.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .nav-shop {
+    background-image: url(../../image/nav-case/SHOP.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
