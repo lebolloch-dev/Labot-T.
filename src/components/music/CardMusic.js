@@ -15,7 +15,10 @@ const CardMusic = ({ music }) => {
           <p>{music.id}</p>
         </div>
         <a href={music.lien} target="_blank" className="boutton-stream">
-          <img src="../../../img/music/bouton-dl-stream.png" alt="" />
+          <img
+            src={process.env.PUBLIC_URL + "/img/music/bouton-dl-stream.png"}
+            alt=""
+          />
         </a>
       </div>
     </li>
@@ -23,3 +26,6 @@ const CardMusic = ({ music }) => {
 };
 
 export default CardMusic;
+
+{
+}
