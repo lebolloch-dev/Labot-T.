@@ -5,7 +5,8 @@ const Header = () => {
   return (
     <div className="header">
       <img
-        src="./img/LOGO-LABO-T-2019.png"
+        // src="../../../public/img/LOGO-LABO-T-2019.png"
+        src={process.env.PUBLIC_URL + "/img/LOGO-LABO-T-2019.png"}
         alt="logo Labo T, label de musique électronique sur Montpellier"
       />
       <nav>

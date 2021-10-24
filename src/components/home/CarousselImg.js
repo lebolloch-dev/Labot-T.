@@ -11,7 +11,7 @@ const CarousselImg = () => {
         //   amount: 0.2,
         // },
         {
-          image: "./img/caroussel/DSC_5214.jpg",
+          image: `${process.env.PUBLIC_URL + "/img/caroussel/DSC_5214.jpg"}`,
           amount: 0.7,
         },
       ]}
