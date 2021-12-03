@@ -1,18 +1,42 @@
 import React, { useEffect, useState } from "react";
+
 import CardMusic from "../components/music/CardMusic";
 import { musicTableau } from "../music-tableau";
 
 const Music = () => {
+  const [loadPost, setLoadPost] = useState(true);
   const [music, setMusic] = useState([]);
+  const [count, setCount] = useState(12);
+  const [load, setLoad] = useState(true);
+
+  const loadMore = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 180 >
+      document.scrollingElement.scrollHeight
+    ) {
+      setLoadPost(true);
+    }
+  };
 
   useEffect(() => {
-    setMusic(musicTableau);
-  }, [music]);
+    if (loadPost) {
+      setMusic(musicTableau.slice(0, count));
+      setLoadPost(false);
+      setCount(count + 12);
+    }
 
-  console.log(music);
+    window.addEventListener("scroll", loadMore);
+    return () => window.removeEventListener("scroll", loadMore);
+  }, [music, loadPost]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(false);
+    }, 3000);
+  }, []);
 
   return (
-    <div className="music">
+    <main className="music">
       <div className="title-groupe">
         <h1 className="title-page">MUSIC</h1>
       </div>
@@ -22,7 +46,7 @@ const Music = () => {
           return <CardMusic music={music} key={music.id} />;
         })}
       </ul>
-    </div>
+    </main>
   );
 };
 

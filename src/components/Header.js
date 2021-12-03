@@ -1,37 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Header = () => {
+  const [header, setHeader] = useState(false);
+  const [showLinks, setShowLinks] = useState(false);
+
+  const handleShowLinks = () => {
+    setShowLinks(!showLinks);
+  };
+
+  const changeScrollHeader = () => {
+    if (window.scrollY >= 85) {
+      setHeader(true);
+    } else {
+      setHeader(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeScrollHeader);
   return (
-    <div className="header">
+    <header className={header ? "header active" : "header"}>
       <img
-        // src="../../../public/img/LOGO-LABO-T-2019.png"
-        src={process.env.PUBLIC_URL + "/img/LOGO-LABO-T-2019.png"}
-        alt="logo Labo T, label de musique électronique sur Montpellier"
+        src={process.env.PUBLIC_URL + "/img/LOGO-LABO-T-2019-(negative).png"}
+        alt="logo Labo T, electronic music label"
       />
       <nav>
-        <ul>
+        <ul className={showLinks ? "show-bar" : null}>
           <li>
             <NavLink
               exact
               to="/"
-              title="page d'acceuil"
+              title="Home"
               activeClassName="header-activ"
+              onClick={() => {
+                setShowLinks(false);
+              }}
             >
               <h3>HOME</h3>
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/#about-us">
+            <Link
+              smooth
+              to="/#about-us"
+              onClick={() => {
+                setShowLinks(false);
+              }}
+            >
               <h3>ABOUT US</h3>
-            </NavLink>
+            </Link>
           </li>
           <li>
             <NavLink
               exact
               to="/Music"
-              title="page musique"
+              title="Music"
               activeClassName="header-activ"
+              onClick={() => {
+                setShowLinks(false);
+              }}
             >
               <h3>MUSIC</h3>
             </NavLink>
@@ -40,8 +68,11 @@ const Header = () => {
             <NavLink
               exact
               to="/Artists"
-              title="page artist"
+              title="Artists"
               activeClassName="header-activ"
+              onClick={() => {
+                setShowLinks(false);
+              }}
             >
               <h3>ARTISTS</h3>
             </NavLink>
@@ -50,74 +81,86 @@ const Header = () => {
             <NavLink
               exact
               to="/Events"
-              title="page event"
+              title="Events"
               activeClassName="header-activ"
+              onClick={() => {
+                setShowLinks(false);
+              }}
             >
               <h3>EVENTS</h3>
             </NavLink>
           </li>
           <li>
             <a
-              href="https://labo-t.myspreadshop.fr/"
+              href="https://teho.bandcamp.com/merch"
               rel="noopener noreferrer"
               target="_blank"
-              title="Shop Labo T"
+              title="Shop"
+              onClick={() => {
+                setShowLinks(false);
+              }}
             >
               <h3>SHOP</h3>
             </a>
           </li>
-        </ul>
-        <a
-          href="https://www.facebook.com/labo.t.music/ "
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Facebook"
-        >
-          <i className="fab fa-facebook-square"></i>
-        </a>
-        <a
-          href=" https://www.instagram.com/labo.t.music/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Instagram"
-        >
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a
-          href=" http://www.youtube.com/c/Labo_T_channel "
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Youtube"
-        >
-          <i className="fab fa-youtube"></i>
-        </a>
-        <a
-          href="https://smarturl.it/SpotifyLaboT"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Spotify"
-        >
-          <i className="fab fa-spotify"></i>
-        </a>
-        <a
-          href="https://www.soundcloud.com/labo-t/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="SoundCloud"
-        >
-          <i className="fab fa-soundcloud"></i>
-        </a>
 
-        <a
-          href=" https://teho.bandcamp.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="BandCamp"
-        >
-          <i className="fab fa-bandcamp"></i>
-        </a>
+          <li>
+            <a
+              href="https://www.facebook.com/labo.t.music/ "
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook"
+            >
+              <i className="fab fa-facebook-square"></i>
+            </a>
+            <a
+              href=" https://www.instagram.com/labo.t.music/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a
+              href=" http://www.youtube.com/c/Labo_T_channel "
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Youtube"
+            >
+              <i className="fab fa-youtube"></i>
+            </a>
+            <a
+              href="https://smarturl.it/SpotifyLaboT"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Spotify"
+            >
+              <i className="fab fa-spotify"></i>
+            </a>
+            <a
+              href="https://www.soundcloud.com/labo-t/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Soundcloud"
+            >
+              <i className="fab fa-soundcloud"></i>
+            </a>
+
+            <a
+              href=" https://teho.bandcamp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Bandcamp"
+            >
+              <i className="fab fa-bandcamp"></i>
+            </a>
+          </li>
+        </ul>
+        <button className="navbar-burger" onClick={handleShowLinks}>
+          <span className={showLinks ? "cross-bar" : null}></span>
+        </button>
       </nav>
-    </div>
+    </header>
   );
 };
 

@@ -1,4 +1,134 @@
-.carou-parallax {
-  height: 100vh;
-  width: 100vw;
+.parallax-banner {
+  position: relative;
 }
+
+.caroussel {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: fixed;
+  z-index: -100;
+  background-size: cover;
+  background-position: center;
+  animation: slide 30s infinite;
+}
+
+// .goDown {
+//   position: absolute;
+//   bottom: 0;
+//   width: 60px;
+//   height: 70px;
+//   // border: 1px solid red;
+//   bottom: 2.5%;
+//   left: 50%;
+//   transform: translate(-30px, -2.5%);
+
+//   i {
+//     position: absolute;
+
+//     font-size: 2.5em;
+
+//     animation-name: toDown;
+//     animation-duration: 1.2s;
+//     animation-iteration-count: infinite;
+//     animation-timing-function: linear;
+//   }
+
+//   @keyframes toDown {
+//     0% {
+//       transform: translateY(-20px);
+//       opacity: 0;
+//     }
+//     50% {
+//       transform: translateY(0px);
+//       opacity: 1;
+//     }
+//     75% {
+//       transform: translateY(20px);
+//       opacity: 0;
+//     }
+//     100% {
+//       transform: translateY(-20px);
+//       opacity: 0;
+//     }
+//   }
+
+//   .fI {
+//     color: rgba($color: white, $alpha: 1);
+//     top: 60%;
+//     left: 13.5px;
+//   }
+
+//   .sI {
+//     color: rgba($color: white, $alpha: 0.5);
+//     top: 30%;
+//     left: 13.5px;
+//   }
+
+//   @keyframes slide {
+//     0% {
+//       background-image: url(../../image/caroussel/DSC_5214.jpg);
+//     }
+//     // 10% {
+//     //   background-image: url(../../image/caroussel/DSC_5214.jpg);
+//     // }
+//     10.01% {
+//       background-image: url(../../image/caroussel/DSC_5388.jpg);
+//     }
+//     // 20% {
+//     //   background-image: url(../../image/caroussel/DSC_5388.jpg);
+//     // }
+//     20.01% {
+//       background-image: url(../../image/caroussel/DSC_4978.jpg);
+//     }
+//     // 30% {
+//     //   background-image: url(../../image/caroussel/DSC_4978.jpg);
+//     // }
+//     30.01% {
+//       background-image: url(../../image/caroussel/DSC_5165.jpg);
+//     }
+//     // 40% {
+//     //   background-image: url(../../image/caroussel/DSC_5165.jpg);
+//     // }
+//     40.01% {
+//       background-image: url(../../image/caroussel/DSC_5370.jpg);
+//     }
+//     // 50% {
+//     //   background-image: url(../../image/caroussel/DSC_5370.jpg);
+//     // }
+//     50.01% {
+//       background-image: url(../../image/caroussel/DSC_5368.jpg);
+//     }
+//     // 60% {
+//     //   background-image: url(../../image/caroussel/DSC_5368.jpg);
+//     // }
+//     60.01% {
+//       background-image: url(../../image/caroussel/DSC_5124.jpg);
+//     }
+//     // 70% {
+//     //   background-image: url(../../image/caroussel/DSC_5124.jpg);
+//     // }
+//     70.01% {
+//       background-image: url(../../image/caroussel/DSC_4969.jpg);
+//     }
+//     // 80% {
+//     //   background-image: url(../../image/caroussel/DSC_4969.jpg);
+//     // }
+//     80.01% {
+//       background-image: url(../../image/caroussel/DSC_5311.jpg);
+//     }
+//     // 90% {
+//     //   background-image: url(../../image/caroussel/DSC_5311.jpg);
+//     // }
+//     90.01% {
+//       background-image: url(../../image/caroussel/DSC_5176.jpg);
+//     }
+//     // 100% {
+//     //   background-image: url(../../image/caroussel/DSC_5176.jpg);
+//     // }
+//     100% {
+//       background-image: url(../../image/caroussel/DSC_5025.jpg);
+//       transform: scale(1.3);
+//     }
+//   }
+// }

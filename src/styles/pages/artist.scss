@@ -1,0 +1,55 @@
+.artists {
+  .other-artists {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 32px;
+
+    .title-artist-remixer {
+      display: flex;
+      align-items: center;
+
+      @media screen and(max-width:1200px) {
+        padding: 0 18px;
+      }
+
+      h4 {
+        white-space: nowrap;
+      }
+
+      span {
+        border: 1px solid black;
+        height: 1px;
+        width: 990px;
+        margin-left: 8px;
+      }
+    }
+
+    .all-other {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 8px;
+
+      @media screen and(max-width:1200px) {
+        padding: 0 18px;
+      }
+
+      @media screen and(max-width:600px) {
+        flex-direction: column;
+        padding-bottom: 32px;
+      }
+
+      .artist {
+        width: 30%;
+        // margin-bottom: 18px;
+        margin-right: 18px;
+
+        @media screen and(max-width:600px) {
+          width: 100%;
+        }
+        p {
+          letter-spacing: 0.3px;
+        }
+      }
+    }
+  }
+}
